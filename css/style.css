@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
 :root{
-  --orange:#ffa500;
+  --orange:#f4965c;
+  --blue:#167baf;
+  ;
 }
 
 *{
@@ -12,10 +14,11 @@
   outline: none; border:none;
   text-decoration: none;
   transition: all .2s linear;
+  user-select: none;
 }
 
 *::selection{
-  background:var(--orange);
+  background:var(--blue);
   color:#fff;
 }
 
@@ -37,8 +40,8 @@ section{
 
 .heading span{
   font-size: 3.5rem;
-  background:rgba(255, 165, 0,.2);
-  color:var(--orange);
+  background:#e9f9ff;
+  color:var(--blue);
   border-radius: .5rem;
   padding:.2rem 1rem;
 }
@@ -50,49 +53,48 @@ section{
 .btn{
   display: inline-block;
   margin-top: 1rem;
-  background:var(--orange);
-  color:#fff;
+  background:rgba(255, 255, 255,0.8);
+  color:var(--blue);
   padding:.8rem 3rem;
-  border:.2rem solid var(--orange);
+  border:.2rem solid var(--blue);
   cursor: pointer;
   font-size: 1.7rem;
+  border-radius: 1rem;
 }
 
 .btn:hover{
-  background:rgba(255, 165, 0,.2);
-  color:var(--orange);
+  background:var(--blue);
+  color:#ffffff;
 }
 
 header{
   position: fixed;
   top:0; left: 0; right:0;
-  background:#333;
+  background:rgba(255, 255, 255,0.8);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding:2rem 9%;
+  height: 6rem;
+  box-shadow: 0rem 0.5rem 1rem 0.2rem rgba(0,0,0,.3);
 }
 
 header .logo{
-  font-size: 2.5rem;
-  font-weight: bolder;
-  color:#fff;
-  text-transform: uppercase;
+  height: 5rem;
+  pointer-events: none;
 }
 
-header .logo span{
-  color:var(--orange);
-}
 
 header .navbar a{
-  color:#fff;
+  color:var(--blue);
   font-size: 2rem;
   margin:0 .8rem;
 }
 
 header .navbar a:hover{
   color:var(--orange);
+  font-size: 2.1rem;
 }
 
 header .icons i{
@@ -103,7 +105,7 @@ header .icons i{
 }
 
 header .icons i:hover{
-  color:var(--orange);
+  color:var(--blue);
 }
 
 header .search-bar-container{
@@ -139,90 +141,10 @@ header .search-bar-container label{
 }
 
 header .search-bar-container label:hover{
-  color:var(--orange);
+  color:var(--blue);
 }
 
-.login-form-container{
-  position: fixed;
-  top:-120%; left: 0;
-  z-index: 10000;
-  min-height: 100vh;
-  width:100%;
-  background:rgba(0,0,0,.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.login-form-container.active{
-  top:0;
-}
-
-.login-form-container form{
-  margin:2rem;
-  padding:1.5rem 2rem;
-  border-radius: .5rem;
-  background:#fff;
-  width:50rem;
-}
-
-.login-form-container form h3{
-  font-size: 3rem;
-  color:#444;
-  text-transform: uppercase;
-  text-align: center;
-  padding:1rem 0;
-}
-
-.login-form-container form .box{
-  width:100%;
-  padding:1rem;
-  font-size: 1.7rem;
-  color:#333;
-  margin:.6rem 0;
-  border:.1rem solid rgba(0,0,0,.3);
-  text-transform: none;
-}
-
-.login-form-container form .box:focus{
-  border-color: var(--orange);;
-}
-
-.login-form-container form #remember{
-  margin:2rem 0;
-}
-
-.login-form-container form label{
-  font-size: 1.5rem;
-}
-
-.login-form-container form .btn{
-  display: block;
-  width:100%;
-}
-
-.login-form-container form p{
-  padding:.5rem 0;
-  font-size: 1.5rem;
-  color:#666;
-}
-
-.login-form-container form p a{
-  color:var(--orange);
-}
-
-.login-form-container form p a:hover{
-  color:#333;
-  text-decoration: underline;
-}
-
-.login-form-container #form-close{
-  position: absolute;
-  top:2rem; right:3rem;
-  font-size: 5rem;
-  color:#fff;
-  cursor: pointer;
-}
 
 #menu-bar{
   color:#fff;
@@ -288,8 +210,11 @@ header .search-bar-container label:hover{
   margin:0 .5rem;
 }
 
+.home .controls .vid-btn:hover{
+    background:var(--blue);
+  }
 .home .controls .vid-btn.active{
-  background:var(--orange);
+  background:var(--blue);
 }
 
 .book .row{
@@ -304,6 +229,7 @@ header .search-bar-container label:hover{
 }
 
 .book .row .image img{
+  pointer-events: none;
   width:100%;
 }
 
@@ -350,6 +276,7 @@ header .search-bar-container label:hover{
   height: 25rem;
   width:100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .packages .box-container .box .content{
@@ -362,7 +289,7 @@ header .search-bar-container label:hover{
 }
 
 .packages .box-container .box .content h3 i{
-  color:var(--orange);
+  color:var(--blue);
 }
 
 .packages .box-container .box .content p{
@@ -373,7 +300,7 @@ header .search-bar-container label:hover{
 
 .packages .box-container .box .content .stars i{
   font-size:1.7rem;
-  color:var(--orange);
+  color:var(--blue);
 }
 
 .packages .box-container .box .content .price{
@@ -404,18 +331,20 @@ header .search-bar-container label:hover{
 .services .box-container .box i{
   padding:1rem;
   font-size: 5rem;
-  color:var(--orange);
+  color:var(--blue);
 }
 
 .services .box-container .box h3{
   font-size: 2.5rem;
   color:#333;
+  cursor: default;
 }
 
 .services .box-container .box p{
   font-size: 1.5rem;
   color:#666;
   padding:1rem 0;
+  cursor: default;
 }
 
 .services .box-container .box:hover{
@@ -442,6 +371,7 @@ header .search-bar-container label:hover{
   height: 100%;
   width:100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .gallery .box-container .box .content{
@@ -451,17 +381,17 @@ header .search-bar-container label:hover{
   width:100%;
   text-align: center;
   background:rgba(0,0,0,.7);
-  padding:2rem;
-  padding-top: 5rem;
 }
 
 .gallery .box-container .box:hover .content{
   top:0;
+  cursor: pointer;
 }
 
 .gallery .box-container .box .content h3{
   font-size: 2.5rem;
-  color:var(--orange);
+  color: #fff;
+  margin-top: 8rem;
 }
 
 .gallery .box-container .box .content p{
@@ -487,6 +417,7 @@ header .search-bar-container label:hover{
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+  pointer-events: none;
 }
 
 .review .box h3{
@@ -501,7 +432,7 @@ header .search-bar-container label:hover{
 }
 
 .review .box .stars i{
-  color:var(--orange);
+  color:var(--blue);
   font-size: 1.7rem;
 }
 
@@ -513,27 +444,44 @@ header .search-bar-container label:hover{
 }
 
 .contact .row .image{
-  flex:1 1 35rem;
+  flex:1 1 15rem;
 }
 
 .contact .row .image img{
   width:100%;
+  pointer-events: none;
 }
 
-.contact .row form{
-  flex:1 1 50rem;
+.contact .row .contact{
+  flex:1 1 35rem;
   padding:2rem;
   box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
   border-radius: .5rem;
 }
 
-.contact .row form .inputBox{
+.contact .row div .inputBox{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 2rem;
+}
+.contact .row div .inputBox i{
+  height: 5rem;
+  line-height: 3.5rem;
+  width: 2rem;
+  vertical-align: middle;
+}
+.contact .row div .inputBox span{
+  margin-left: 2rem;
+  height: 7rem;
+  line-height: 3.5rem;
+  width: 55rem;
+  overflow: visible;
+  text-overflow: ellipsis;
+  vertical-align: middle;
 }
 
-.contact .row form .inputBox input, .contact .row form textarea{
+.contact .row div .inputBox input, .contact .row div textarea{
   width:49%;
   margin:1rem 0;
   padding:1rem;
@@ -543,7 +491,7 @@ header .search-bar-container label:hover{
   text-transform: none;
 }
 
-.contact .row form textarea{
+.contact .row div textarea{
   height: 15rem;
   resize: none;
   width:100%;
@@ -588,7 +536,7 @@ header .search-bar-container label:hover{
 }
 
 .footer .box-container .box a:hover{
-  color:var(--orange);
+  color:var(--blue);
   text-decoration: underline;
 }
 
@@ -603,7 +551,7 @@ header .search-bar-container label:hover{
 }
 
 .footer .credit span{
-  color:var(--orange);
+  color:var(--blue);
 }
 
 
